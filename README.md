@@ -140,4 +140,4 @@ No license specified. All rights reserved by the author.
 
 ## Contact/Support Information
 
-For questions or support, please contact aadigunjal0975@gmail.com or open an issue on the GitHub repository.
+For questions or support, please contact :- aadigunjal0975@gmail.com or open an issue on the GitHub repository.
