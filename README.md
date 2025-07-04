@@ -2,6 +2,12 @@
 
 A React-based spreadsheet UI component with features like column resizing, cell editing, keyboard navigation, and more.
 
+## Preview
+
+🔗 **Live Demo:** [ag-spreadsheet-ui.netlify.app](https://ag-spreadsheet-ui.netlify.app/)
+
+---
+
 ## Features and Functionality
 
 *   **Interactive Spreadsheet:** Provides a user interface for creating and manipulating spreadsheet data.
