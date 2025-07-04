@@ -6,10 +6,6 @@ A sleek, modern spreadsheet UI built with **React 18**, **TypeScript**, and **Ta
 
 ---
 
-## 📸 Preview
-
-![AG Spreadsheet UI Screenshot](https://ag-spreadsheet-ui.netlify.app/screenshot.png) <!-- Replace with actual image URL or delete this section -->
-
 ---
 
 ## 🔧 Tech Stack
