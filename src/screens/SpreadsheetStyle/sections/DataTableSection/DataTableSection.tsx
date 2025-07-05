@@ -7,12 +7,9 @@ import {
   User,
   Globe,
   UserCheck,
-  Plus,
   Link,
-  RotateCcw,
-  ArrowUpDown,
-  ChevronDown,
   MoreHorizontal,
+  ChevronDown,
 } from 'lucide-react';
 import { Badge } from '../../../../components/ui/badge';
 import {
@@ -26,6 +23,7 @@ import {
 import { SpreadsheetCell } from '../../../../components/SpreadsheetCell';
 import { ColumnResizer } from '../../../../components/ColumnResizer';
 import { useKeyboardNavigation } from '../../../../hooks/useKeyboardNavigation';
+import { RefreshIcon, SortIcon, NewActionIcon } from '../../../../components/icons/CustomIcons';
 
 interface DataTableSectionProps {
   selectedCell: { row: number; col: number } | null;
@@ -229,7 +227,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                       onClick={() => console.log('Refresh Q3 Financial Overview')}
                       className="hover:bg-gray-200 p-1 rounded transition-colors"
                     >
-                      <RotateCcw className="w-4 h-4 text-[#545454] stroke-[1.5]" />
+                      <RefreshIcon className="w-4 h-4 text-[#545454]" />
                     </button>
                   </div>
                 </TableHead>
@@ -238,7 +236,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                   <div className="h-8 flex items-center justify-center gap-2 px-2 bg-[#d2e0d4]">
                     <div className="inline-flex items-center gap-1 px-1 py-0.5 rounded">
                       <button onClick={() => console.log('Sort ABC column')}>
-                        <ArrowUpDown className="w-4 h-4 text-[#757575] hover:text-[#505450] stroke-[1.5]" />
+                        <SortIcon className="w-4 h-4 text-[#757575] hover:text-[#505450]" />
                       </button>
                       <span className="text-sm font-medium text-[#505450]">ABC</span>
                       <button onClick={() => console.log('ABC column options')}>
@@ -251,7 +249,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                   <div className="h-8 flex items-center justify-center gap-2 px-2 bg-[#dccffc]">
                     <div className="inline-flex items-center gap-1 px-1 py-0.5 rounded">
                       <button onClick={() => console.log('Sort Answer a question')}>
-                        <ArrowUpDown className="w-4 h-4 text-[#757575] hover:text-[#463e59] stroke-[1.5]" />
+                        <SortIcon className="w-4 h-4 text-[#757575] hover:text-[#463e59]" />
                       </button>
                       <span className="text-sm font-medium text-[#463e59]">
                         Answer a question
@@ -266,7 +264,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                   <div className="h-8 flex items-center justify-center gap-2 px-4 bg-[#fac2af]">
                     <div className="inline-flex items-center gap-1 px-1 py-0.5 rounded">
                       <button onClick={() => console.log('Sort Extract')}>
-                        <ArrowUpDown className="w-4 h-4 text-[#757575] hover:text-[#695149] stroke-[1.5]" />
+                        <SortIcon className="w-4 h-4 text-[#757575] hover:text-[#695149]" />
                       </button>
                       <span className="text-sm font-medium text-[#695149]">Extract</span>
                       <button onClick={() => console.log('Extract options')}>
@@ -421,7 +419,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
               onClick={() => console.log('Add new column')}
               className="hover:bg-gray-200 p-1 rounded transition-colors"
             >
-              <Plus className="w-4 h-4 text-[#757575] stroke-[1.5]" />
+              <NewActionIcon className="w-4 h-4 text-[#757575]" />
             </button>
           </div>
           <div className="h-8 bg-[#eeeeee] flex items-center justify-center border-b border-[#e0e0e0]"></div>
