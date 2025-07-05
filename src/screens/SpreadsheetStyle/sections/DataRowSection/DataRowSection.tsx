@@ -1,18 +1,16 @@
 import {
+  ArrowUpDown,
   ChevronDown,
+  Download,
+  Filter,
+  Grid3X3,
+  Share,
+  Plus,
+  Upload,
 } from 'lucide-react';
 import React from 'react';
 import { Button } from '../../../../components/ui/button';
 import { Separator } from '../../../../components/ui/separator';
-import { 
-  SortIcon, 
-  FilterIcon, 
-  CellViewIcon, 
-  ImportIcon, 
-  ExportIcon, 
-  ShareIcon, 
-  NewActionIcon 
-} from '../../../../components/icons/CustomIcons';
 
 interface DataRowSectionProps {
   toolbarExpanded: boolean;
@@ -40,15 +38,15 @@ export const DataRowSection: React.FC<DataRowSectionProps> = ({
   onNewAction,
 }) => {
   const toolbarActions = [
-    { icon: <SortIcon className="w-4 h-4" />, label: 'Sort', onClick: onSort },
-    { icon: <FilterIcon className="w-4 h-4" />, label: 'Filter', onClick: onFilter },
-    { icon: <CellViewIcon className="w-4 h-4" />, label: 'Cell view', onClick: onCellView },
+    { icon: <ArrowUpDown className="w-4 h-4 stroke-[1.5]" />, label: 'Sort', onClick: onSort },
+    { icon: <Filter className="w-4 h-4 stroke-[1.5]" />, label: 'Filter', onClick: onFilter },
+    { icon: <Grid3X3 className="w-4 h-4 stroke-[1.5]" />, label: 'Cell view', onClick: onCellView },
   ];
 
   const rightActions = [
-    { icon: <ImportIcon className="w-4 h-4" />, label: 'Import', onClick: onImport },
-    { icon: <ExportIcon className="w-4 h-4" />, label: 'Export', onClick: onExport },
-    { icon: <ShareIcon className="w-4 h-4" />, label: 'Share', onClick: onShare },
+    { icon: <Download className="w-4 h-4 stroke-[1.5]" />, label: 'Import', onClick: onImport },
+    { icon: <Upload className="w-4 h-4 stroke-[1.5]" />, label: 'Export', onClick: onExport },
+    { icon: <Share className="w-4 h-4 stroke-[1.5]" />, label: 'Share', onClick: onShare },
   ];
 
   return (
@@ -107,7 +105,7 @@ export const DataRowSection: React.FC<DataRowSectionProps> = ({
           className="flex items-center justify-center gap-1 px-6 py-2 bg-[#4b6a4f] text-white rounded-md hover:bg-[#3e5741] transition-colors"
           onClick={onNewAction}
         >
-          <NewActionIcon className="w-4 h-4" />
+          <Plus className="w-4 h-4 stroke-[1.5]" />
           <span className="font-paragraph-14-s-medium-14-20">New Action</span>
         </Button>
       </div>

@@ -1,6 +1,8 @@
 import {
+  Bell,
   ChevronRight,
   MoreHorizontal,
+  Search,
 } from "lucide-react";
 import React from "react";
 import {
@@ -18,7 +20,6 @@ import {
 } from "../../../../components/ui/breadcrumb";
 import { Button } from "../../../../components/ui/button";
 import { Input } from "../../../../components/ui/input";
-import { WorkspaceIcon, NotificationBellIcon, SearchIcon } from "../../../../components/icons/CustomIcons";
 
 export const NavigationBarSection = (): JSX.Element => {
   const breadcrumbItems = [
@@ -31,7 +32,7 @@ export const NavigationBarSection = (): JSX.Element => {
     <header className="flex items-center justify-between px-4 py-2 relative self-stretch w-full flex-[0_0_auto] z-[3] bg-white border-b [border-bottom-style:solid] border-[#eeeeee]">
       {/* Left side - Logo and breadcrumbs */}
       <div className="inline-flex items-center justify-center gap-4 relative flex-[0_0_auto]">
-        <WorkspaceIcon className="w-6 h-6" />
+        <img className="relative w-6 h-6" alt="Panel" src="/panel.svg" />
 
         <Breadcrumb>
           <BreadcrumbList className="inline-flex items-center gap-1">
@@ -69,7 +70,7 @@ export const NavigationBarSection = (): JSX.Element => {
       <div className="inline-flex items-center gap-1 relative flex-[0_0_auto]">
         {/* Search */}
         <div className="inline-flex items-center gap-2 p-3 relative flex-[0_0_auto] bg-[#f6f6f6] rounded-md overflow-hidden">
-          <SearchIcon className="w-4 h-4 text-[#757575]" />
+          <Search className="w-4 h-4 text-[#757575] stroke-[1.5]" />
           <Input
             placeholder="Search within sheet"
             className="border-0 bg-transparent p-0 h-auto text-[12px] font-paragraph-12-XS-regular-12-16 text-[#757575] focus-visible:ring-0 focus-visible:ring-offset-0"
@@ -79,7 +80,7 @@ export const NavigationBarSection = (): JSX.Element => {
         {/* Notifications */}
         <div className="inline-flex items-center gap-3 p-2 relative flex-[0_0_auto] bg-white rounded-lg">
           <Button variant="ghost" size="icon" className="relative w-6 h-6 p-0">
-            <NotificationBellIcon className="w-5 h-5 text-[#757575]" />
+            <Bell className="w-5 h-5 stroke-[1.5]" />
             <Badge className="flex items-center justify-center w-4 h-4 absolute top-0 left-4 bg-[#4b6a4f] text-[#f6f6f6] rounded-full border-2 border-solid border-white p-0">
               <span className="font-paragraph-10-XXS-medium-10-16 text-[8px]">
                 2
