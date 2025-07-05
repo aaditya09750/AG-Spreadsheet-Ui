@@ -1,12 +1,12 @@
 import {
-  ArrowUpDownIcon,
-  ChevronDownIcon,
-  DownloadIcon,
-  FilterIcon,
-  LayoutIcon,
-  ShareIcon,
-  SplitIcon,
-  UploadIcon,
+  ArrowUpDown,
+  ChevronDown,
+  Download,
+  Filter,
+  Grid3X3,
+  Share,
+  Plus,
+  Upload,
 } from 'lucide-react';
 import React from 'react';
 import { Button } from '../../../../components/ui/button';
@@ -38,15 +38,15 @@ export const DataRowSection: React.FC<DataRowSectionProps> = ({
   onNewAction,
 }) => {
   const toolbarActions = [
-    { icon: <ArrowUpDownIcon className="w-5 h-5" />, label: 'Sort', onClick: onSort },
-    { icon: <FilterIcon className="w-5 h-5" />, label: 'Filter', onClick: onFilter },
-    { icon: <LayoutIcon className="w-5 h-5" />, label: 'Cell view', onClick: onCellView },
+    { icon: <ArrowUpDown className="w-4 h-4 stroke-[1.5]" />, label: 'Sort', onClick: onSort },
+    { icon: <Filter className="w-4 h-4 stroke-[1.5]" />, label: 'Filter', onClick: onFilter },
+    { icon: <Grid3X3 className="w-4 h-4 stroke-[1.5]" />, label: 'Cell view', onClick: onCellView },
   ];
 
   const rightActions = [
-    { icon: <DownloadIcon className="w-5 h-5" />, label: 'Import', onClick: onImport },
-    { icon: <UploadIcon className="w-5 h-5" />, label: 'Export', onClick: onExport },
-    { icon: <ShareIcon className="w-5 h-5" />, label: 'Share', onClick: onShare },
+    { icon: <Download className="w-4 h-4 stroke-[1.5]" />, label: 'Import', onClick: onImport },
+    { icon: <Upload className="w-4 h-4 stroke-[1.5]" />, label: 'Export', onClick: onExport },
+    { icon: <Share className="w-4 h-4 stroke-[1.5]" />, label: 'Share', onClick: onShare },
   ];
 
   return (
@@ -59,8 +59,8 @@ export const DataRowSection: React.FC<DataRowSectionProps> = ({
         <span className="font-paragraph-14-s-regular-14-20 text-[#121212]">
           Tool bar
         </span>
-        <ChevronDownIcon 
-          className={`w-4 h-4 transition-transform duration-200 ${
+        <ChevronDown 
+          className={`w-4 h-4 stroke-[1.5] transition-transform duration-200 ${
             toolbarExpanded ? 'rotate-180' : ''
           }`} 
         />
@@ -105,7 +105,7 @@ export const DataRowSection: React.FC<DataRowSectionProps> = ({
           className="flex items-center justify-center gap-1 px-6 py-2 bg-[#4b6a4f] text-white rounded-md hover:bg-[#3e5741] transition-colors"
           onClick={onNewAction}
         >
-          <SplitIcon className="w-5 h-5" />
+          <Plus className="w-4 h-4 stroke-[1.5]" />
           <span className="font-paragraph-14-s-medium-14-20">New Action</span>
         </Button>
       </div>

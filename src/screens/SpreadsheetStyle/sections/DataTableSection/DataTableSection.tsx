@@ -6,7 +6,7 @@ import {
   CircleDot,
   User,
   Globe,
-  Smile,
+  UserCheck,
   Plus,
   Link,
   RotateCcw,
@@ -124,7 +124,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
     { icon: User, label: 'Submitter', bgColor: 'bg-[#eeeeee]' },
     { icon: Globe, label: 'URL', bgColor: 'bg-[#eeeeee]' },
     {
-      icon: Smile,
+      icon: UserCheck,
       label: 'Assigned',
       bgColor: 'bg-[#e8f0e9]',
       textColor: 'text-[#666c66]',
@@ -196,7 +196,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
         <div className="flex-none w-8 flex flex-col border-r border-[#e0e0e0]">
           <div className="h-8 bg-[#e2e2e2] border-b border-[#e0e0e0]"></div>
           <div className="h-8 bg-[#eeeeee] flex items-center pl-2 border-b border-[#e0e0e0]">
-            <Hash className="w-4 h-4 text-[#757575]" />
+            <Hash className="w-4 h-4 text-[#757575] stroke-[1.5]" />
           </div>
 
           {rowNumbers.map((num) => (
@@ -220,7 +220,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                 <TableHead className="h-8 px-0 bg-[#e2e2e2] border-b border-r border-[#e0e0e0]" colSpan={4}>
                   <div className="h-8 flex items-center px-2 gap-2 bg-[#e2e2e2]">
                     <div className="inline-flex items-center gap-1 p-1 bg-[#eeeeee] rounded">
-                      <Link className="w-4 h-4 text-[#545454]" />
+                      <Link className="w-4 h-4 text-[#545454] stroke-[1.5]" />
                       <span className="text-[#545454] text-xs font-paragraph-12-XS-regular-12-16">
                         Q3 Financial Overview
                       </span>
@@ -229,7 +229,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                       onClick={() => console.log('Refresh Q3 Financial Overview')}
                       className="hover:bg-gray-200 p-1 rounded transition-colors"
                     >
-                      <RotateCcw className="w-4 h-4 text-[#545454]" />
+                      <RotateCcw className="w-4 h-4 text-[#545454] stroke-[1.5]" />
                     </button>
                   </div>
                 </TableHead>
@@ -238,11 +238,11 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                   <div className="h-8 flex items-center justify-center gap-2 px-2 bg-[#d2e0d4]">
                     <div className="inline-flex items-center gap-1 px-1 py-0.5 rounded">
                       <button onClick={() => console.log('Sort ABC column')}>
-                        <ArrowUpDown className="w-4 h-4 text-[#757575] hover:text-[#505450]" />
+                        <ArrowUpDown className="w-4 h-4 text-[#757575] hover:text-[#505450] stroke-[1.5]" />
                       </button>
                       <span className="text-sm font-medium text-[#505450]">ABC</span>
                       <button onClick={() => console.log('ABC column options')}>
-                        <MoreHorizontal className="w-4 h-4 text-[#757575] hover:text-[#505450]" />
+                        <MoreHorizontal className="w-4 h-4 text-[#757575] hover:text-[#505450] stroke-[1.5]" />
                       </button>
                     </div>
                   </div>
@@ -251,13 +251,13 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                   <div className="h-8 flex items-center justify-center gap-2 px-2 bg-[#dccffc]">
                     <div className="inline-flex items-center gap-1 px-1 py-0.5 rounded">
                       <button onClick={() => console.log('Sort Answer a question')}>
-                        <ArrowUpDown className="w-4 h-4 text-[#757575] hover:text-[#463e59]" />
+                        <ArrowUpDown className="w-4 h-4 text-[#757575] hover:text-[#463e59] stroke-[1.5]" />
                       </button>
                       <span className="text-sm font-medium text-[#463e59]">
                         Answer a question
                       </span>
                       <button onClick={() => console.log('Answer a question options')}>
-                        <MoreHorizontal className="w-4 h-4 text-[#757575] hover:text-[#463e59]" />
+                        <MoreHorizontal className="w-4 h-4 text-[#757575] hover:text-[#463e59] stroke-[1.5]" />
                       </button>
                     </div>
                   </div>
@@ -266,11 +266,11 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                   <div className="h-8 flex items-center justify-center gap-2 px-4 bg-[#fac2af]">
                     <div className="inline-flex items-center gap-1 px-1 py-0.5 rounded">
                       <button onClick={() => console.log('Sort Extract')}>
-                        <ArrowUpDown className="w-4 h-4 text-[#757575] hover:text-[#695149]" />
+                        <ArrowUpDown className="w-4 h-4 text-[#757575] hover:text-[#695149] stroke-[1.5]" />
                       </button>
                       <span className="text-sm font-medium text-[#695149]">Extract</span>
                       <button onClick={() => console.log('Extract options')}>
-                        <MoreHorizontal className="w-4 h-4 text-[#757575] hover:text-[#695149]" />
+                        <MoreHorizontal className="w-4 h-4 text-[#757575] hover:text-[#695149] stroke-[1.5]" />
                       </button>
                     </div>
                   </div>
@@ -294,7 +294,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                       <div className="flex h-8 items-center gap-1 pl-2 pr-1">
                         <div className="flex items-center gap-1 flex-1">
                           {IconComponent && (
-                            <IconComponent className="w-4 h-4 text-[#757575]" />
+                            <IconComponent className="w-4 h-4 text-[#757575] stroke-[1.5]" />
                           )}
                           <span
                             className={`text-xs font-semibold ${
@@ -312,7 +312,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                                 onClick={() => console.log(`Sort ${header.label}`)}
                                 className="p-1 hover:bg-gray-200 rounded transition-colors"
                               >
-                                <ChevronDown className="w-3 h-3 text-[#757575]" />
+                                <ChevronDown className="w-3 h-3 text-[#757575] stroke-[1.5]" />
                               </button>
                             )}
                         </div>
@@ -421,7 +421,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
               onClick={() => console.log('Add new column')}
               className="hover:bg-gray-200 p-1 rounded transition-colors"
             >
-              <Plus className="w-5 h-5 text-[#757575]" />
+              <Plus className="w-4 h-4 text-[#757575] stroke-[1.5]" />
             </button>
           </div>
           <div className="h-8 bg-[#eeeeee] flex items-center justify-center border-b border-[#e0e0e0]"></div>

@@ -1,4 +1,4 @@
-import { PlusIcon } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import React from 'react';
 import { Tabs, TabsList, TabsTrigger } from '../../../../components/ui/tabs';
 
@@ -40,7 +40,7 @@ export const HeaderSection: React.FC<HeaderSectionProps> = ({
               className="inline-flex items-center gap-2 p-1 bg-white rounded hover:bg-gray-50 transition-colors"
               onClick={() => console.log('Add new tab clicked')}
             >
-              <PlusIcon className="w-5 h-5 text-gray-500" />
+              <Plus className="w-4 h-4 text-gray-500 stroke-[1.5]" />
             </button>
           </div>
         </TabsList>
