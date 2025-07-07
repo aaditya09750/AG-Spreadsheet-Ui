@@ -106,15 +106,15 @@ export const NavigationBarSection = (): JSX.Element => {
         <div className="inline-flex items-center gap-2 pl-2 pr-3 py-1.5 relative flex-[0_0_auto] bg-white rounded-lg">
           <Avatar className="w-8 h-8">
             <AvatarImage src="#" alt="User avatar" />
-            <AvatarFallback className="font-semibold text-sm bg-[#f3f4f6] text-[#374151]">JD</AvatarFallback>
+            <AvatarFallback className="font-semibold text-sm bg-[#f3f4f6] text-[#374151]">AG</AvatarFallback>
           </Avatar>
 
           <div className="inline-flex flex-col max-w-[120px] items-start relative flex-[0_0_auto]">
             <div className="relative w-fit text-sm font-medium text-[#111827] whitespace-nowrap">
-              John Doe
+              Aadi Gunjal
             </div>
             <div className="relative self-stretch text-xs text-[#9ca3af] leading-tight">
-              john.doe...
+              aadigunjal0975@gmail.com
             </div>
           </div>
         </div>
