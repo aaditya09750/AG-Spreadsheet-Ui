@@ -32,7 +32,21 @@ export const NavigationBarSection = (): JSX.Element => {
     <header className="flex items-center justify-between px-4 py-2 relative self-stretch w-full flex-[0_0_auto] z-[3] bg-white border-b [border-bottom-style:solid] border-[#eeeeee]">
       {/* Left side - Logo and breadcrumbs */}
       <div className="inline-flex items-center justify-center gap-4 relative flex-[0_0_auto]">
-        <img className="relative w-6 h-6" alt="Panel" src="/panel.svg" />
+        <div className="relative flex items-center justify-center" style={{ width: '20px', height: '16px' }}>
+          <img 
+            className="absolute" 
+            alt="Workspace" 
+            src="/Shape.png"
+            style={{
+              width: '20px',
+              height: '16px',
+              top: '4px',
+              left: '2px',
+              opacity: 1,
+              filter: 'brightness(0) saturate(100%) invert(42%) sepia(12%) saturate(1234%) hue-rotate(85deg) brightness(95%) contrast(89%)'
+            }}
+          />
+        </div>
 
         <Breadcrumb>
           <BreadcrumbList className="inline-flex items-center gap-1">
