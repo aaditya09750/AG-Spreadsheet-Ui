@@ -19,28 +19,28 @@ export const HeaderSection: React.FC<HeaderSectionProps> = ({
   ];
 
   return (
-    <header className="flex items-center gap-6 pl-8 pr-4 pt-1 pb-0 relative w-full bg-white border-t border-[#eeeeee]">
-      <Tabs value={activeTab} onValueChange={onTabChange} className="flex items-start">
-        <TabsList className="bg-transparent p-0 h-auto">
+    <header className="flex items-center gap-6 px-4 py-0 relative w-full bg-white border-t border-[#e5e7eb] h-12">
+      <Tabs value={activeTab} onValueChange={onTabChange} className="flex items-center h-full">
+        <TabsList className="bg-transparent p-0 h-full border-b-0">
           {tabItems.map((tab) => (
             <TabsTrigger
               key={tab.id}
               value={tab.id}
-              className={`gap-2 px-4 py-2.5 rounded-none transition-all duration-200 ${
+              className={`gap-2 px-4 py-3 rounded-none transition-all duration-200 h-full border-b-2 ${
                 activeTab === tab.id
-                  ? 'bg-[#e8f0e9] border-t-2 border-[#4b6a4f] text-[#3e5741] font-paragraph-16-m-semi-bold-16-24'
-                  : 'bg-transparent text-[#757575] font-paragraph-16-m-medium-16-24 hover:bg-gray-50'
+                  ? 'bg-transparent border-b-[#4b6a4f] text-[#111827] font-semibold'
+                  : 'bg-transparent border-b-transparent text-[#6b7280] font-medium hover:text-[#374151] hover:bg-gray-50'
               }`}
             >
-              {tab.label}
+              <span className="text-sm">{tab.label}</span>
             </TabsTrigger>
           ))}
-          <div className="gap-1 px-1 py-2 self-stretch inline-flex items-center justify-center">
+          <div className="gap-1 px-2 py-3 self-stretch inline-flex items-center justify-center">
             <button 
               className="inline-flex items-center gap-2 p-1 bg-white rounded hover:bg-gray-50 transition-colors"
               onClick={() => console.log('Add new tab clicked')}
             >
-              <Plus className="w-4 h-4 text-gray-500 stroke-[1.5]" />
+              <Plus className="w-4 h-4 text-[#9ca3af] stroke-[1.5]" />
             </button>
           </div>
         </TabsList>

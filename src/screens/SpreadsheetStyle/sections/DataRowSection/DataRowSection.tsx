@@ -49,19 +49,19 @@ export const DataRowSection: React.FC<DataRowSectionProps> = ({
   ];
 
   return (
-    <header className="flex items-center gap-2 px-2 py-1.5 w-full bg-white border-b border-[#eeeeee] z-[2]">
+    <header className="flex items-center gap-3 px-4 py-2 w-full bg-white border-b border-[#e5e7eb] h-12">
       <Button
         variant="ghost"
-        className="flex items-center justify-center gap-1 p-2 rounded hover:bg-gray-50 transition-colors"
+        className="flex items-center justify-center gap-2 px-2 py-1 rounded hover:bg-gray-50 transition-colors h-8"
         onClick={onToggleToolbar}
       >
-        <span className="font-paragraph-14-s-regular-14-20 text-[#121212]">
+        <span className="text-sm font-medium text-[#111827]">
           Tool bar
         </span>
         <img 
           src="/Chevron Double.png" 
           alt="chevron" 
-          className={`w-4 h-4 transition-transform duration-200 ${
+          className={`w-3 h-3 transition-transform duration-200 ${
             toolbarExpanded ? 'rotate-180' : ''
           }`}
           style={{
@@ -70,12 +70,12 @@ export const DataRowSection: React.FC<DataRowSectionProps> = ({
         />
       </Button>
 
-      <Separator orientation="vertical" className="h-6 bg-[#eeeeee]" />
+      <Separator orientation="vertical" className="h-5 bg-[#e5e7eb]" />
 
-      <div className="flex items-center gap-1 flex-1">
+      <div className="flex items-center gap-2 flex-1">
         <Button
           variant="ghost"
-          className="flex items-center gap-1 pl-2 pr-3 py-2 rounded-md hover:bg-gray-50 transition-colors"
+          className="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-gray-50 transition-colors h-8"
           onClick={onHideFields}
         >
           <img 
@@ -86,7 +86,7 @@ export const DataRowSection: React.FC<DataRowSectionProps> = ({
               filter: 'brightness(0) saturate(100%) invert(7%) sepia(7%) saturate(1115%) hue-rotate(314deg) brightness(98%) contrast(88%)'
             }}
           />
-          <span className="font-paragraph-14-s-regular-14-20 text-[#121212]">
+          <span className="text-sm font-medium text-[#111827]">
             Hide fields
           </span>
         </Button>
@@ -94,11 +94,11 @@ export const DataRowSection: React.FC<DataRowSectionProps> = ({
           <Button
             key={index}
             variant="ghost"
-            className="flex items-center gap-1 pl-2 pr-3 py-2 rounded-md hover:bg-gray-50 transition-colors"
+            className="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-gray-50 transition-colors h-8"
             onClick={action.onClick}
           >
             {action.icon}
-            <span className="font-paragraph-14-s-regular-14-20 text-[#121212]">
+            <span className="text-sm font-medium text-[#111827]">
               {action.label}
             </span>
           </Button>
@@ -111,11 +111,11 @@ export const DataRowSection: React.FC<DataRowSectionProps> = ({
             <Button
               key={index}
               variant="outline"
-              className="flex items-center gap-1 pl-2 pr-3 py-2 rounded-md border-[#eeeeee] hover:bg-gray-50 transition-colors"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-md border-[#d1d5db] hover:bg-gray-50 transition-colors h-8 text-sm"
               onClick={action.onClick}
             >
               {action.icon}
-              <span className="font-paragraph-14-s-regular-14-20 text-[#545454]">
+              <span className="font-medium text-[#6b7280]">
                 {action.label}
               </span>
             </Button>
@@ -123,11 +123,11 @@ export const DataRowSection: React.FC<DataRowSectionProps> = ({
         </div>
 
         <Button 
-          className="flex items-center justify-center gap-1 px-6 py-2 bg-[#4b6a4f] text-white rounded-md hover:bg-[#3e5741] transition-colors"
+          className="flex items-center justify-center gap-2 px-4 py-1.5 bg-[#4b6a4f] text-white rounded-md hover:bg-[#3e5741] transition-colors h-8"
           onClick={onNewAction}
         >
           <Plus className="w-4 h-4 stroke-[1.5]" />
-          <span className="font-paragraph-14-s-medium-14-20">New Action</span>
+          <span className="text-sm font-medium">New Action</span>
         </Button>
       </div>
     </header>

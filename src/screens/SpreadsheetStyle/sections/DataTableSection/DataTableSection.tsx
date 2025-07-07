@@ -51,11 +51,11 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
   const rowNumbers = Array.from({ length: 25 }, (_, i) => i + 1);
 
   const [cellData, setCellData] = React.useState<Record<string, string>>({
-    '0-0': 'Launch social media campaign for product XYZ',
+    '0-0': 'Launch social media campaign for pro...',
     '0-1': '15-11-2024',
     '0-2': 'In-process',
     '0-3': 'Aisha Patel',
-    '0-4': 'www.aishapatel.com',
+    '0-4': 'www.aishapatel...',
     '0-5': 'Sophie Choudhury',
     '0-6': 'Medium',
     '0-7': '20-11-2024',
@@ -64,16 +64,16 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
     '1-1': '28-10-2024',
     '1-2': 'Need to start',
     '1-3': 'Irfan Khan',
-    '1-4': 'www.irfankhanportfolio.com',
+    '1-4': 'www.irfankhang...',
     '1-5': 'Tejas Pandey',
     '1-6': 'High',
     '1-7': '30-10-2024',
     '1-8': '3,500,000',
-    '2-0': 'Finalize user testing feedback for app update',
+    '2-0': 'Finalize user testing feedback for app...',
     '2-1': '05-12-2024',
     '2-2': 'In-process',
     '2-3': 'Mark Johnson',
-    '2-4': 'www.markjohnsondesigns.com',
+    '2-4': 'www.markjohns...',
     '2-5': 'Rachel Lee',
     '2-6': 'Medium',
     '2-7': '10-12-2024',
@@ -82,7 +82,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
     '3-1': '10-01-2025',
     '3-2': 'Complete',
     '3-3': 'Emily Green',
-    '3-4': 'www.emilygreenart.com',
+    '3-4': 'www.emilygreen...',
     '3-5': 'Tom Wright',
     '3-6': 'Low',
     '3-7': '15-01-2025',
@@ -91,7 +91,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
     '4-1': '25-01-2025',
     '4-2': 'Blocked',
     '4-3': 'Jessica Brown',
-    '4-4': 'www.jessicabrowncreative.com',
+    '4-4': 'www.jessicabro...',
     '4-5': 'Kevin Smith',
     '4-6': 'Low',
     '4-7': '30-01-2025',
@@ -115,97 +115,99 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
   });
 
   const columnHeaders = [
-    { icon: Hash, label: '#', bgColor: 'bg-[#eeeeee]' },
-    { icon: Briefcase, label: 'Job Request', bgColor: 'bg-[#eeeeee]' },
-    { icon: Calendar, label: 'Submitted', bgColor: 'bg-[#eeeeee]' },
-    { icon: CircleDot, label: 'Status', bgColor: 'bg-[#eeeeee]' },
-    { icon: User, label: 'Submitter', bgColor: 'bg-[#eeeeee]' },
-    { icon: Globe, label: 'URL', bgColor: 'bg-[#eeeeee]' },
+    { icon: Hash, label: '#', bgColor: 'bg-[#f3f4f6]', width: 40 },
+    { icon: Briefcase, label: 'Job Request', bgColor: 'bg-[#f3f4f6]', width: 280 },
+    { icon: Calendar, label: 'Submitted', bgColor: 'bg-[#f3f4f6]', width: 120 },
+    { icon: CircleDot, label: 'Status', bgColor: 'bg-[#f3f4f6]', width: 120 },
+    { icon: User, label: 'Submitter', bgColor: 'bg-[#f3f4f6]', width: 120 },
+    { icon: Globe, label: 'URL', bgColor: 'bg-[#f3f4f6]', width: 140 },
     {
       icon: UserCheck,
       label: 'Assigned',
-      bgColor: 'bg-[#e8f0e9]',
-      textColor: 'text-[#666c66]',
-      headerBg: 'bg-[#d2e0d4]',
-      headerText: 'text-[#505450]',
+      bgColor: 'bg-[#dcfce7]',
+      textColor: 'text-[#166534]',
+      headerBg: 'bg-[#bbf7d0]',
+      headerText: 'text-[#166534]',
       headerTitle: 'ABC',
+      width: 120,
     },
     {
       icon: null,
       label: 'Priority',
-      bgColor: 'bg-[#eae3fc]',
-      textColor: 'text-[#645c7f]',
-      headerBg: 'bg-[#dccffc]',
-      headerText: 'text-[#463e59]',
+      bgColor: 'bg-[#f3e8ff]',
+      textColor: 'text-[#7c3aed]',
+      headerBg: 'bg-[#e9d5ff]',
+      headerText: 'text-[#7c3aed]',
       headerTitle: 'Answer a question',
+      width: 100,
     },
     {
       icon: null,
       label: 'Due Date',
-      bgColor: 'bg-[#eae3fc]',
-      textColor: 'text-[#645c7f]',
-      headerBg: 'bg-[#dccffc]',
-      headerText: 'text-[#463e59]',
+      bgColor: 'bg-[#f3e8ff]',
+      textColor: 'text-[#7c3aed]',
+      headerBg: 'bg-[#e9d5ff]',
+      headerText: 'text-[#7c3aed]',
       headerTitle: 'Answer a question',
+      width: 120,
     },
     {
       icon: null,
       label: 'Est. Value',
-      bgColor: 'bg-[#ffe9e0]',
-      textColor: 'text-[#8c6b61]',
-      headerBg: 'bg-[#fac2af]',
-      headerText: 'text-[#695149]',
+      bgColor: 'bg-[#fed7aa]',
+      textColor: 'text-[#ea580c]',
+      headerBg: 'bg-[#fdba74]',
+      headerText: 'text-[#ea580c]',
       headerTitle: 'Extract',
+      width: 120,
     },
   ];
 
   const getStatusBadgeColor = (status: string) => {
     switch (status) {
       case 'In-process':
-        return 'bg-[#fff3d6] text-[#84640a]';
+        return 'bg-[#fef3c7] text-[#d97706] border-[#fbbf24]';
       case 'Need to start':
-        return 'bg-slate-200 text-slate-600';
+        return 'bg-[#f3f4f6] text-[#6b7280] border-[#d1d5db]';
       case 'Complete':
-        return 'bg-[#d2f2e2] text-[#0a6d3c]';
+        return 'bg-[#d1fae5] text-[#065f46] border-[#34d399]';
       case 'Blocked':
-        return 'bg-[#ffe1dd] text-[#c12119]';
+        return 'bg-[#fee2e2] text-[#dc2626] border-[#f87171]';
       default:
-        return 'bg-gray-200 text-gray-600';
+        return 'bg-[#f3f4f6] text-[#6b7280] border-[#d1d5db]';
     }
   };
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
       case 'High':
-        return 'text-[#ef4c43]';
+        return 'text-[#dc2626] font-medium';
       case 'Medium':
-        return 'text-[#c1920f]';
+        return 'text-[#d97706] font-medium';
       case 'Low':
-        return 'text-[#1a8cff]';
+        return 'text-[#2563eb] font-medium';
       default:
-        return 'text-gray-600';
+        return 'text-[#6b7280] font-medium';
     }
   };
 
   return (
-    <div className="flex flex-col h-[872px] w-full bg-white overflow-hidden">
-      <div className="flex flex-1 w-full overflow-auto">
+    <div className="flex flex-col w-full bg-white overflow-hidden">
+      <div className="flex w-full overflow-auto">
         {/* Row numbers column */}
-        <div className="flex-none w-8 flex flex-col border-r border-[#e0e0e0]">
-          <div className="h-8 bg-[#e2e2e2] border-b border-[#e0e0e0]"></div>
-          <div className="h-8 bg-[#eeeeee] flex items-center pl-2 border-b border-[#e0e0e0]">
-            <Hash className="w-4 h-4 text-[#757575] stroke-[1.5]" />
+        <div className="flex-none w-10 flex flex-col border-r border-[#e5e7eb]">
+          <div className="h-8 bg-[#f9fafb] border-b border-[#e5e7eb]"></div>
+          <div className="h-8 bg-[#f3f4f6] flex items-center justify-center border-b border-[#e5e7eb]">
+            <Hash className="w-4 h-4 text-[#9ca3af] stroke-[1.5]" />
           </div>
 
           {rowNumbers.map((num) => (
             <div
               key={`row-${num}`}
-              className="h-8 bg-white flex items-center justify-center hover:bg-gray-50 cursor-pointer border-b border-[#e0e0e0]"
+              className="h-8 bg-white flex items-center justify-center hover:bg-gray-50 cursor-pointer border-b border-[#f3f4f6] text-sm text-[#6b7280] font-medium"
               onClick={() => onSelectCell(num - 1, 0)}
             >
-              <span className="text-[#757575] text-xs font-paragraph-14-s-regular-14-20">
-                {num}
-              </span>
+              {num}
             </div>
           ))}
         </div>
@@ -215,9 +217,9 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
           <Table className="border-collapse">
             <TableHeader>
               <TableRow className="border-none">
-                <TableHead className="h-8 px-0 bg-[#e2e2e2] border-b border-r border-[#e0e0e0]" colSpan={4}>
-                  <div className="h-8 flex items-center px-2 gap-2 bg-[#e2e2e2]">
-                    <div className="inline-flex items-center gap-1 p-1 bg-[#eeeeee] rounded">
+                <TableHead className="h-8 px-0 bg-[#f9fafb] border-b border-r border-[#e5e7eb]" colSpan={4}>
+                  <div className="h-8 flex items-center px-3 gap-2 bg-[#f9fafb]">
+                    <div className="inline-flex items-center gap-2 px-2 py-1 bg-[#f3f4f6] rounded border">
                       <img 
                         src="/Link.png" 
                         alt="link" 
@@ -226,7 +228,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                           filter: 'brightness(0) saturate(100%) invert(33%) sepia(0%) saturate(1115%) hue-rotate(314deg) brightness(98%) contrast(88%)'
                         }}
                       />
-                      <span className="text-[#545454] text-xs font-paragraph-12-XS-regular-12-16">
+                      <span className="text-[#6b7280] text-sm font-medium">
                         Q3 Financial Overview
                       </span>
                     </div>
@@ -234,48 +236,48 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                       onClick={() => console.log('Refresh Q3 Financial Overview')}
                       className="hover:bg-gray-200 p-1 rounded transition-colors"
                     >
-                      <RotateCcw className="w-4 h-4 text-[#545454] stroke-[1.5]" />
+                      <RotateCcw className="w-4 h-4 text-[#6b7280] stroke-[1.5]" />
                     </button>
                   </div>
                 </TableHead>
-                <TableHead className="h-8 px-0 bg-white border-b border-r border-[#e0e0e0]"></TableHead>
-                <TableHead className="h-8 px-0 bg-[#d2e0d4] border-b border-r border-[#e0e0e0]">
-                  <div className="h-8 flex items-center justify-center gap-2 px-2 bg-[#d2e0d4]">
+                <TableHead className="h-8 px-0 bg-white border-b border-r border-[#e5e7eb]"></TableHead>
+                <TableHead className="h-8 px-0 bg-[#bbf7d0] border-b border-r border-[#e5e7eb]">
+                  <div className="h-8 flex items-center justify-center gap-2 px-2 bg-[#bbf7d0]">
                     <div className="inline-flex items-center gap-1 px-1 py-0.5 rounded">
                       <button onClick={() => console.log('Sort ABC column')}>
-                        <ArrowUpDown className="w-4 h-4 text-[#757575] hover:text-[#505450] stroke-[1.5]" />
+                        <ArrowUpDown className="w-4 h-4 text-[#166534] hover:text-[#166534] stroke-[1.5]" />
                       </button>
-                      <span className="text-sm font-medium text-[#505450]">ABC</span>
+                      <span className="text-sm font-medium text-[#166534]">ABC</span>
                       <button onClick={() => console.log('ABC column options')}>
-                        <MoreHorizontal className="w-4 h-4 text-[#757575] hover:text-[#505450] stroke-[1.5]" />
+                        <MoreHorizontal className="w-4 h-4 text-[#166534] hover:text-[#166534] stroke-[1.5]" />
                       </button>
                     </div>
                   </div>
                 </TableHead>
-                <TableHead className="h-8 px-0 bg-[#dccffc] border-b border-r border-[#e0e0e0]" colSpan={2}>
-                  <div className="h-8 flex items-center justify-center gap-2 px-2 bg-[#dccffc]">
+                <TableHead className="h-8 px-0 bg-[#e9d5ff] border-b border-r border-[#e5e7eb]" colSpan={2}>
+                  <div className="h-8 flex items-center justify-center gap-2 px-2 bg-[#e9d5ff]">
                     <div className="inline-flex items-center gap-1 px-1 py-0.5 rounded">
                       <button onClick={() => console.log('Sort Answer a question')}>
-                        <ArrowUpDown className="w-4 h-4 text-[#757575] hover:text-[#463e59] stroke-[1.5]" />
+                        <ArrowUpDown className="w-4 h-4 text-[#7c3aed] hover:text-[#7c3aed] stroke-[1.5]" />
                       </button>
-                      <span className="text-sm font-medium text-[#463e59]">
+                      <span className="text-sm font-medium text-[#7c3aed]">
                         Answer a question
                       </span>
                       <button onClick={() => console.log('Answer a question options')}>
-                        <MoreHorizontal className="w-4 h-4 text-[#757575] hover:text-[#463e59] stroke-[1.5]" />
+                        <MoreHorizontal className="w-4 h-4 text-[#7c3aed] hover:text-[#7c3aed] stroke-[1.5]" />
                       </button>
                     </div>
                   </div>
                 </TableHead>
-                <TableHead className="h-8 px-0 bg-[#fac2af] border-b border-r border-[#e0e0e0]">
-                  <div className="h-8 flex items-center justify-center gap-2 px-4 bg-[#fac2af]">
+                <TableHead className="h-8 px-0 bg-[#fdba74] border-b border-r border-[#e5e7eb]">
+                  <div className="h-8 flex items-center justify-center gap-2 px-2 bg-[#fdba74]">
                     <div className="inline-flex items-center gap-1 px-1 py-0.5 rounded">
                       <button onClick={() => console.log('Sort Extract')}>
-                        <ArrowUpDown className="w-4 h-4 text-[#757575] hover:text-[#695149] stroke-[1.5]" />
+                        <ArrowUpDown className="w-4 h-4 text-[#ea580c] hover:text-[#ea580c] stroke-[1.5]" />
                       </button>
-                      <span className="text-sm font-medium text-[#695149]">Extract</span>
+                      <span className="text-sm font-medium text-[#ea580c]">Extract</span>
                       <button onClick={() => console.log('Extract options')}>
-                        <MoreHorizontal className="w-4 h-4 text-[#757575] hover:text-[#695149] stroke-[1.5]" />
+                        <MoreHorizontal className="w-4 h-4 text-[#ea580c] hover:text-[#ea580c] stroke-[1.5]" />
                       </button>
                     </div>
                   </div>
@@ -286,24 +288,24 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                   const colIndex = index + 1;
                   const IconComponent = header.icon;
                   const isHidden = hiddenColumns.has(colIndex);
-                  const width = columnWidths[colIndex] || 150;
+                  const width = columnWidths[colIndex] || header.width;
 
                   if (isHidden) return null;
 
                   return (
                     <TableHead
                       key={`subheader-${index}`}
-                      className={`h-8 ${header.bgColor} border-b border-r border-[#e0e0e0] relative`}
+                      className={`h-8 ${header.bgColor} border-b border-r border-[#e5e7eb] relative`}
                       style={{ width: `${width}px`, minWidth: `${width}px` }}
                     >
-                      <div className="flex h-8 items-center gap-1 pl-2 pr-1">
-                        <div className="flex items-center gap-1 flex-1">
+                      <div className="flex h-8 items-center gap-2 pl-3 pr-2">
+                        <div className="flex items-center gap-2 flex-1">
                           {IconComponent && (
-                            <IconComponent className="w-4 h-4 text-[#757575] stroke-[1.5]" />
+                            <IconComponent className="w-4 h-4 text-[#6b7280] stroke-[1.5]" />
                           )}
                           <span
-                            className={`text-xs font-semibold ${
-                              header.textColor || 'text-[#757575]'
+                            className={`text-sm font-medium ${
+                              header.textColor || 'text-[#6b7280]'
                             }`}
                           >
                             {header.label}
@@ -344,7 +346,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                   {columnHeaders.slice(1).map((header, colIndex) => {
                     const actualColIndex = colIndex + 1;
                     const isHidden = hiddenColumns.has(actualColIndex);
-                    const width = columnWidths[actualColIndex] || 150;
+                    const width = columnWidths[actualColIndex] || header.width;
                     const cellKey = `${rowIndex}-${colIndex}`;
                     const cellValue = cellData[cellKey] || '';
 
@@ -358,11 +360,11 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                       return (
                         <TableCell
                           key={`cell-${rowIndex}-${colIndex}`}
-                          className="h-8 px-2 py-0 bg-white border-b border-r border-[#e0e0e0]"
+                          className="h-8 px-3 py-1 bg-white border-b border-r border-[#f3f4f6]"
                           style={{ width: `${width}px`, minWidth: `${width}px` }}
                         >
                           <Badge
-                            className={`${getStatusBadgeColor(cellValue)} rounded-full font-medium text-xs px-2 py-1`}
+                            className={`${getStatusBadgeColor(cellValue)} rounded-full text-xs px-2 py-1 border`}
                           >
                             {cellValue}
                           </Badge>
@@ -374,10 +376,10 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                       return (
                         <TableCell
                           key={`cell-${rowIndex}-${colIndex}`}
-                          className="h-8 px-2 py-0 bg-white border-b border-r border-[#e0e0e0] text-center"
+                          className="h-8 px-3 py-1 bg-white border-b border-r border-[#f3f4f6] text-center"
                           style={{ width: `${width}px`, minWidth: `${width}px` }}
                         >
-                          <div className={`text-xs font-semibold ${getPriorityColor(cellValue)}`}>
+                          <div className={`text-sm ${getPriorityColor(cellValue)}`}>
                             {cellValue}
                           </div>
                         </TableCell>
@@ -388,14 +390,14 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                       return (
                         <TableCell
                           key={`cell-${rowIndex}-${colIndex}`}
-                          className="h-8 px-2 py-0 bg-white border-b border-r border-[#e0e0e0]"
+                          className="h-8 px-3 py-1 bg-white border-b border-r border-[#f3f4f6]"
                           style={{ width: `${width}px`, minWidth: `${width}px` }}
                         >
                           <div className="flex justify-end items-center gap-1">
-                            <span className="text-xs text-[#121212] text-right">
+                            <span className="text-sm text-[#111827] text-right font-medium">
                               {cellValue}
                             </span>
-                            <span className="text-xs text-[#afafaf] font-medium">₹</span>
+                            <span className="text-sm text-[#9ca3af] font-medium">₹</span>
                           </div>
                         </TableCell>
                       );
@@ -404,7 +406,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                     return (
                       <TableCell
                         key={`cell-${rowIndex}-${colIndex}`}
-                        className="h-8 px-0 py-0 bg-white border-b border-r border-[#e0e0e0]"
+                        className="h-8 px-0 py-0 bg-white border-b border-r border-[#f3f4f6]"
                         style={{ width: `${width}px`, minWidth: `${width}px` }}
                       >
                         <SpreadsheetCell
@@ -415,7 +417,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                           onStartEdit={() => onStartEditing(rowIndex, colIndex)}
                           onStopEdit={onStopEditing}
                           onValueChange={(value) => updateCellValue(rowIndex, colIndex, value)}
-                          className={header.label === 'URL' ? 'underline' : ''}
+                          className={header.label === 'URL' ? 'underline text-blue-600' : ''}
                         />
                       </TableCell>
                     );
@@ -427,16 +429,16 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
         </div>
 
         {/* Add column */}
-        <div className="flex-none w-[126px] border border-dashed border-[#cbcbcb] flex flex-col">
-          <div className="h-8 bg-[#eeeeee] flex items-center justify-center border-b border-[#e0e0e0]">
+        <div className="flex-none w-[60px] border border-dashed border-[#d1d5db] flex flex-col">
+          <div className="h-8 bg-[#f3f4f6] flex items-center justify-center border-b border-[#e5e7eb]">
             <button
               onClick={() => console.log('Add new column')}
               className="hover:bg-gray-200 p-1 rounded transition-colors"
             >
-              <Plus className="w-4 h-4 text-[#757575] stroke-[1.5]" />
+              <Plus className="w-4 h-4 text-[#9ca3af] stroke-[1.5]" />
             </button>
           </div>
-          <div className="h-8 bg-[#eeeeee] flex items-center justify-center border-b border-[#e0e0e0]"></div>
+          <div className="h-8 bg-[#f3f4f6] flex items-center justify-center border-b border-[#e5e7eb]"></div>
           <div className="flex-1 bg-white"></div>
         </div>
       </div>

@@ -62,8 +62,8 @@ export const SpreadsheetCell: React.FC<SpreadsheetCellProps> = ({
   return (
     <div
       className={cn(
-        'h-8 px-2 py-0 relative cursor-cell bg-white',
-        isSelected && !isEditing && 'ring-2 ring-blue-500 ring-inset z-10',
+        'h-8 px-3 py-1 relative cursor-cell bg-white',
+        isSelected && !isEditing && 'ring-2 ring-[#3b82f6] ring-inset z-10',
         className
       )}
       onClick={onSelect}
@@ -76,10 +76,10 @@ export const SpreadsheetCell: React.FC<SpreadsheetCellProps> = ({
           onChange={handleInputChange}
           onBlur={handleInputBlur}
           onKeyDown={handleInputKeyDown}
-          className="w-full h-full bg-white border border-blue-500 px-1 text-xs outline-none z-20"
+          className="w-full h-full bg-white border border-[#3b82f6] px-2 text-sm outline-none z-20"
         />
       ) : (
-        <div className="text-xs text-[#121212] truncate h-full flex items-center">
+        <div className="text-sm text-[#111827] truncate h-full flex items-center">
           {value}
         </div>
       )}
