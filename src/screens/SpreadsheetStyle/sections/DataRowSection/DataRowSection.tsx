@@ -1,6 +1,5 @@
 import {
   ArrowUpDown,
-  ChevronDown,
   Download,
   Filter,
   Grid3X3,
@@ -59,16 +58,38 @@ export const DataRowSection: React.FC<DataRowSectionProps> = ({
         <span className="font-paragraph-14-s-regular-14-20 text-[#121212]">
           Tool bar
         </span>
-        <ChevronDown 
-          className={`w-4 h-4 stroke-[1.5] transition-transform duration-200 ${
+        <img 
+          src="/Chevron Double.png" 
+          alt="chevron" 
+          className={`w-4 h-4 transition-transform duration-200 ${
             toolbarExpanded ? 'rotate-180' : ''
-          }`} 
+          }`}
+          style={{
+            filter: 'brightness(0) saturate(100%) invert(7%) sepia(7%) saturate(1115%) hue-rotate(314deg) brightness(98%) contrast(88%)'
+          }}
         />
       </Button>
 
       <Separator orientation="vertical" className="h-6 bg-[#eeeeee]" />
 
       <div className="flex items-center gap-1 flex-1">
+        <Button
+          variant="ghost"
+          className="flex items-center gap-1 pl-2 pr-3 py-2 rounded-md hover:bg-gray-50 transition-colors"
+          onClick={onHideFields}
+        >
+          <img 
+            src="/Eye.png" 
+            alt="hide fields" 
+            className="w-4 h-4"
+            style={{
+              filter: 'brightness(0) saturate(100%) invert(7%) sepia(7%) saturate(1115%) hue-rotate(314deg) brightness(98%) contrast(88%)'
+            }}
+          />
+          <span className="font-paragraph-14-s-regular-14-20 text-[#121212]">
+            Hide fields
+          </span>
+        </Button>
         {toolbarActions.map((action, index) => (
           <Button
             key={index}

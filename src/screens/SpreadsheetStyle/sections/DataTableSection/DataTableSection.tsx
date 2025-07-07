@@ -8,10 +8,8 @@ import {
   Globe,
   UserCheck,
   Plus,
-  Link,
   RotateCcw,
   ArrowUpDown,
-  ChevronDown,
   MoreHorizontal,
 } from 'lucide-react';
 import { Badge } from '../../../../components/ui/badge';
@@ -220,7 +218,14 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                 <TableHead className="h-8 px-0 bg-[#e2e2e2] border-b border-r border-[#e0e0e0]" colSpan={4}>
                   <div className="h-8 flex items-center px-2 gap-2 bg-[#e2e2e2]">
                     <div className="inline-flex items-center gap-1 p-1 bg-[#eeeeee] rounded">
-                      <Link className="w-4 h-4 text-[#545454] stroke-[1.5]" />
+                      <img 
+                        src="/Link.png" 
+                        alt="link" 
+                        className="w-4 h-4"
+                        style={{
+                          filter: 'brightness(0) saturate(100%) invert(33%) sepia(0%) saturate(1115%) hue-rotate(314deg) brightness(98%) contrast(88%)'
+                        }}
+                      />
                       <span className="text-[#545454] text-xs font-paragraph-12-XS-regular-12-16">
                         Q3 Financial Overview
                       </span>
@@ -312,7 +317,14 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                                 onClick={() => console.log(`Sort ${header.label}`)}
                                 className="p-1 hover:bg-gray-200 rounded transition-colors"
                               >
-                                <ChevronDown className="w-3 h-3 text-[#757575] stroke-[1.5]" />
+                                <img 
+                                  src="/Chevron Double.png" 
+                                  alt="chevron" 
+                                  className="w-3 h-3"
+                                  style={{
+                                    filter: 'brightness(0) saturate(100%) invert(46%) sepia(0%) saturate(1115%) hue-rotate(314deg) brightness(98%) contrast(88%)'
+                                  }}
+                                />
                               </button>
                             )}
                         </div>

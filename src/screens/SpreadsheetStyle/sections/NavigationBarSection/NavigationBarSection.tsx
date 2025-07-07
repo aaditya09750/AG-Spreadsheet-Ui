@@ -1,6 +1,5 @@
 import {
   Bell,
-  ChevronRight,
   MoreHorizontal,
   Search,
 } from "lucide-react";
@@ -54,7 +53,14 @@ export const NavigationBarSection = (): JSX.Element => {
               <React.Fragment key={index}>
                 {index > 0 && (
                   <BreadcrumbSeparator>
-                    <ChevronRight className="w-3 h-3 text-[#afafaf] stroke-[1.5]" />
+                    <img 
+                      src="/Chevron Double.png" 
+                      alt="separator" 
+                      className="w-3 h-3"
+                      style={{
+                        filter: 'brightness(0) saturate(100%) invert(69%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(94%) contrast(86%)'
+                      }}
+                    />
                   </BreadcrumbSeparator>
                 )}
                 <BreadcrumbItem>
