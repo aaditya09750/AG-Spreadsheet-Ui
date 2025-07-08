@@ -28,7 +28,7 @@ export const NavigationBarSection = (): JSX.Element => {
   ];
 
   return (
-    <header className="flex items-center justify-between px-4 py-2 relative self-stretch w-full flex-[0_0_auto] bg-white border-b border-[#e5e7eb] h-12">
+    <header className="flex items-center justify-between relative self-stretch w-full flex-[0_0_auto] bg-white border-b border-[#e5e7eb]" style={{ width: '1440px', height: '56px', paddingTop: '8px', paddingRight: '16px', paddingBottom: '8px', paddingLeft: '16px' }}>
       {/* Left side - Logo and breadcrumbs */}
       <div className="inline-flex items-center justify-center gap-3 relative flex-[0_0_auto]">
         <div className="relative flex items-center justify-center w-5 h-4">
@@ -84,7 +84,7 @@ export const NavigationBarSection = (): JSX.Element => {
       {/* Right side - Search, notifications and profile */}
       <div className="inline-flex items-center gap-2 relative flex-[0_0_auto]">
         {/* Search */}
-        <div className="inline-flex items-center gap-2 px-3 py-2 relative flex-[0_0_auto] bg-[#f9fafb] rounded-md">
+        <div className="inline-flex items-center gap-2 px-3 py-2 relative flex-[0_0_auto] rounded-md" style={{ background: '#F6F6F6' }}>
           <Search className="w-4 h-4 text-[#9ca3af] stroke-[1.5]" />
           <Input
             placeholder="Search within sheet"
