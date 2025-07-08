@@ -49,7 +49,7 @@ export const DataRowSection: React.FC<DataRowSectionProps> = ({
   ];
 
   return (
-    <header className="flex items-center w-full bg-white border-b border-[#e5e7eb]" style={{ width: '1440px', height: '48px', gap: '8px', paddingTop: '6px', paddingRight: '8px', paddingBottom: '6px', paddingLeft: '8px' }}>
+    <header className="flex items-center gap-3 px-4 py-2 w-full bg-white border-b border-[#e5e7eb] h-12">
       <Button
         variant="ghost"
         className="flex items-center justify-center gap-2 px-2 py-1 rounded hover:bg-gray-50 transition-colors h-8"
@@ -123,8 +123,7 @@ export const DataRowSection: React.FC<DataRowSectionProps> = ({
         </div>
 
         <Button 
-          className="flex items-center justify-center text-white rounded-md hover:bg-[#3e5741] transition-colors"
-          style={{ width: '150px', height: '36px', gap: '4px', paddingTop: '8px', paddingRight: '24px', paddingBottom: '8px', paddingLeft: '24px', borderRadius: '6px', background: '#4B6A4F' }}
+          className="flex items-center justify-center gap-2 px-4 py-1.5 bg-[#4B6A4F] text-white rounded-md hover:bg-[#3e5741] transition-colors h-8"
           onClick={onNewAction}
         >
           <Plus className="w-4 h-4 stroke-[1.5]" />

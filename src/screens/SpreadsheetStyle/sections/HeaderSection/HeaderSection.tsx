@@ -19,7 +19,7 @@ export const HeaderSection: React.FC<HeaderSectionProps> = ({
   ];
 
   return (
-    <header className="flex items-center relative w-full bg-white border-t border-[#e5e7eb]" style={{ width: '1440px', height: '48px', gap: '24px', paddingTop: '4px', paddingRight: '16px', paddingLeft: '32px' }}>
+    <header className="flex items-center gap-6 px-4 py-0 relative w-full bg-white border-t border-[#e5e7eb] h-12">
       <Tabs value={activeTab} onValueChange={onTabChange} className="flex items-center h-full">
         <TabsList className="bg-transparent p-0 h-full border-b-0">
           {tabItems.map((tab) => (
@@ -28,15 +28,9 @@ export const HeaderSection: React.FC<HeaderSectionProps> = ({
               value={tab.id}
               className={`gap-2 px-4 py-3 rounded-none transition-all duration-200 h-full border-b-2 ${
                 activeTab === tab.id
-                  ? 'bg-transparent border-b-[#4b6a4f] text-[#111827] font-semibold'
+                  ? 'bg-[#E8F0E9] border-b-[#4b6a4f] text-[#111827] font-semibold'
                   : 'bg-transparent border-b-transparent text-[#6b7280] font-medium hover:text-[#374151] hover:bg-gray-50'
               }`}
-              style={{
-                background: activeTab === tab.id ? '#E8F0E9' : 'transparent',
-                borderBottomColor: activeTab === tab.id ? '#4b6a4f' : 'transparent',
-                color: activeTab === tab.id ? '#111827' : '#6b7280',
-                fontWeight: activeTab === tab.id ? '600' : '500'
-              }}
             >
               <span className="text-sm">{tab.label}</span>
             </TabsTrigger>
