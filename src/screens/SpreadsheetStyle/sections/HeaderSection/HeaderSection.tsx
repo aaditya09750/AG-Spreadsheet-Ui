@@ -19,14 +19,37 @@ export const HeaderSection: React.FC<HeaderSectionProps> = ({
   ];
 
   return (
-    <header className="flex items-center gap-6 px-4 py-0 relative w-full bg-white border-t border-[#e5e7eb] h-12">
+    <header className="flex items-center relative w-full bg-white border-t border-[#e5e7eb]" style={{ width: '1440px', height: '48px', gap: '24px', paddingTop: '4px', paddingRight: '16px', paddingLeft: '32px' }}>
       <Tabs value={activeTab} onValueChange={onTabChange} className="flex items-center h-full">
         <TabsList className="bg-transparent p-0 h-full border-b-0">
           {tabItems.map((tab) => (
             <TabsTrigger
               key={tab.id}
               value={tab.id}
-              className={`gap-2 px-4 py-3 rounded-none transition-all duration-200 h-full border-b-2 ${
+              className={`gap-2 px-4 py-3 rounded-none transition-all duration-200 h-full border-b-2`}
+              style={{
+                background: activeTab === tab.id ? '#E8F0E9' : 'transparent',
+                borderBottomColor: activeTab === tab.id ? '#4b6a4f' : 'transparent',
+                color: activeTab === tab.id ? '#111827' : '#6b7280',
+                fontWeight: activeTab === tab.id ? '600' : '500'
+              }}
+            >
+              <span className="text-sm">{tab.label}</span>
+            </TabsTrigger>
+          ))}
+          <div className="gap-1 px-2 py-3 self-stretch inline-flex items-center justify-center">
+            <button 
+              className="inline-flex items-center gap-2 p-1 bg-white rounded hover:bg-gray-50 transition-colors"
+              onClick={() => console.log('Add new tab clicked')}
+            >
+              <Plus className="w-4 h-4 text-[#9ca3af] stroke-[1.5]" />
+            </button>
+          </div>
+        </TabsList>
+      </Tabs>
+    </header>
+  );
+};
                 activeTab === tab.id
                   ? 'bg-transparent border-b-[#4b6a4f] text-[#111827] font-semibold'
                   : 'bg-transparent border-b-transparent text-[#6b7280] font-medium hover:text-[#374151] hover:bg-gray-50'

@@ -62,10 +62,11 @@ export const SpreadsheetCell: React.FC<SpreadsheetCellProps> = ({
   return (
     <div
       className={cn(
-        'h-8 px-3 py-1 relative cursor-cell bg-white',
+        'relative cursor-cell bg-white',
         isSelected && !isEditing && 'ring-2 ring-[#3b82f6] ring-inset z-10',
         className
       )}
+      style={{ height: '32px', gap: '8px', padding: '8px' }}
       onClick={onSelect}
       onDoubleClick={handleDoubleClick}
     >

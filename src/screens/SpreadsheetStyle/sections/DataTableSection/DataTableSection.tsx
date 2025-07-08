@@ -195,16 +195,17 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
     <div className="flex flex-col w-full bg-white overflow-hidden">
       <div className="flex w-full overflow-auto">
         {/* Row numbers column */}
-        <div className="flex-none w-10 flex flex-col border-r border-[#e5e7eb]">
-          <div className="h-8 bg-[#f9fafb] border-b border-[#e5e7eb]"></div>
-          <div className="h-8 bg-[#f3f4f6] flex items-center justify-center border-b border-[#e5e7eb]">
+        <div className="flex-none flex flex-col border-r border-[#e5e7eb]" style={{ width: '32px' }}>
+          <div style={{ height: '32px' }} className="bg-[#f9fafb] border-b border-[#e5e7eb]"></div>
+          <div style={{ height: '32px' }} className="bg-[#f3f4f6] flex items-center justify-center border-b border-[#e5e7eb]">
             <Hash className="w-4 h-4 text-[#9ca3af] stroke-[1.5]" />
           </div>
 
           {rowNumbers.map((num) => (
             <div
               key={`row-${num}`}
-              className="h-8 bg-white flex items-center justify-center hover:bg-gray-50 cursor-pointer border-b border-[#f3f4f6] text-sm text-[#6b7280] font-medium"
+              className="bg-white flex items-center justify-center hover:bg-gray-50 cursor-pointer border-b border-[#f3f4f6] text-sm text-[#6b7280] font-medium"
+              style={{ width: '32px', height: '32px' }}
               onClick={() => onSelectCell(num - 1, 0)}
             >
               {num}
@@ -217,8 +218,8 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
           <Table className="border-collapse">
             <TableHeader>
               <TableRow className="border-none">
-                <TableHead className="h-8 px-0 bg-[#f9fafb] border-b border-r border-[#e5e7eb]" colSpan={4}>
-                  <div className="h-8 flex items-center px-3 gap-2 bg-[#f9fafb]">
+                <TableHead className="px-0 border-b border-r border-[#e5e7eb]" colSpan={4} style={{ height: '32px', background: '#E2E2E2' }}>
+                  <div className="flex items-center gap-2" style={{ height: '32px', width: '631px', gap: '8px', padding: '8px' }}>
                     <div className="inline-flex items-center gap-2 px-2 py-1 bg-[#f3f4f6] rounded border">
                       <img 
                         src="/Link.png" 
@@ -240,9 +241,9 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                     </button>
                   </div>
                 </TableHead>
-                <TableHead className="h-8 px-0 bg-white border-b border-r border-[#e5e7eb]"></TableHead>
-                <TableHead className="h-8 px-0 bg-[#bbf7d0] border-b border-r border-[#e5e7eb]">
-                  <div className="h-8 flex items-center justify-center gap-2 px-2 bg-[#bbf7d0]">
+                <TableHead className="px-0 bg-white border-b border-r border-[#e5e7eb]" style={{ height: '32px' }}></TableHead>
+                <TableHead className="px-0 border-b border-r border-[#e5e7eb]" style={{ height: '32px', background: '#D2E0D4' }}>
+                  <div className="flex items-center justify-center gap-2" style={{ height: '32px', width: '124px', gap: '8px', paddingRight: '16px', paddingLeft: '16px' }}>
                     <div className="inline-flex items-center gap-1 px-1 py-0.5 rounded">
                       <button onClick={() => console.log('Sort ABC column')}>
                         <ArrowUpDown className="w-4 h-4 text-[#166534] hover:text-[#166534] stroke-[1.5]" />
@@ -254,8 +255,8 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                     </div>
                   </div>
                 </TableHead>
-                <TableHead className="h-8 px-0 bg-[#e9d5ff] border-b border-r border-[#e5e7eb]" colSpan={2}>
-                  <div className="h-8 flex items-center justify-center gap-2 px-2 bg-[#e9d5ff]">
+                <TableHead className="px-0 border-b border-r border-[#e5e7eb]" colSpan={2} style={{ height: '32px', background: '#DCCFFC' }}>
+                  <div className="flex items-center justify-center gap-2" style={{ height: '32px', width: '251px', gap: '8px', paddingRight: '16px', paddingLeft: '16px' }}>
                     <div className="inline-flex items-center gap-1 px-1 py-0.5 rounded">
                       <button onClick={() => console.log('Sort Answer a question')}>
                         <ArrowUpDown className="w-4 h-4 text-[#7c3aed] hover:text-[#7c3aed] stroke-[1.5]" />
@@ -269,8 +270,8 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                     </div>
                   </div>
                 </TableHead>
-                <TableHead className="h-8 px-0 bg-[#fdba74] border-b border-r border-[#e5e7eb]">
-                  <div className="h-8 flex items-center justify-center gap-2 px-2 bg-[#fdba74]">
+                <TableHead className="px-0 border-b border-r border-[#e5e7eb]" style={{ height: '32px', background: '#FAC2AF' }}>
+                  <div className="flex items-center justify-center gap-2" style={{ height: '32px', width: '124px', gap: '8px', paddingRight: '16px', paddingLeft: '16px' }}>
                     <div className="inline-flex items-center gap-1 px-1 py-0.5 rounded">
                       <button onClick={() => console.log('Sort Extract')}>
                         <ArrowUpDown className="w-4 h-4 text-[#ea580c] hover:text-[#ea580c] stroke-[1.5]" />
@@ -288,17 +289,33 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                   const colIndex = index + 1;
                   const IconComponent = header.icon;
                   const isHidden = hiddenColumns.has(colIndex);
-                  const width = columnWidths[colIndex] || header.width;
+                  
+                  // Set specific widths for each column
+                  let width;
+                  let bgColor;
+                  if (header.label === 'Job Request') {
+                    width = 256;
+                    bgColor = '#EEEEEE';
+                  } else if (header.label === 'Priority' || header.label === 'Due Date') {
+                    width = 124;
+                    bgColor = '#EAE3FC';
+                  } else if (header.label === 'Est. Value') {
+                    width = 124;
+                    bgColor = '#FFE9E0';
+                  } else {
+                    width = 124;
+                    bgColor = '#EEEEEE';
+                  }
 
                   if (isHidden) return null;
 
                   return (
                     <TableHead
                       key={`subheader-${index}`}
-                      className={`h-8 ${header.bgColor} border-b border-r border-[#e5e7eb] relative`}
-                      style={{ width: `${width}px`, minWidth: `${width}px` }}
+                      className="border-b border-r border-[#e5e7eb] relative"
+                      style={{ width: `${width}px`, minWidth: `${width}px`, height: '32px', background: bgColor }}
                     >
-                      <div className="flex h-8 items-center gap-2 pl-3 pr-2">
+                      <div className="flex items-center gap-2" style={{ height: '32px', gap: '8px', padding: '8px' }}>
                         <div className="flex items-center gap-2 flex-1">
                           {IconComponent && (
                             <IconComponent className="w-4 h-4 text-[#6b7280] stroke-[1.5]" />
@@ -327,9 +344,21 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                   {columnHeaders.slice(1).map((header, colIndex) => {
                     const actualColIndex = colIndex + 1;
                     const isHidden = hiddenColumns.has(actualColIndex);
-                    const width = columnWidths[actualColIndex] || header.width;
                     const cellKey = `${rowIndex}-${colIndex}`;
                     const cellValue = cellData[cellKey] || '';
+
+                    // Set specific widths and backgrounds for each column
+                    let width;
+                    let cellBgColor = 'bg-white';
+                    if (header.label === 'Job Request') {
+                      width = 256;
+                    } else if (header.label === 'Priority' || header.label === 'Due Date') {
+                      width = 124;
+                    } else if (header.label === 'Est. Value') {
+                      width = 124;
+                    } else {
+                      width = 124;
+                    }
 
                     if (isHidden) return null;
 
@@ -341,8 +370,8 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                       return (
                         <TableCell
                           key={`cell-${rowIndex}-${colIndex}`}
-                          className="h-8 px-3 py-1 bg-white border-b border-r border-[#f3f4f6]"
-                          style={{ width: `${width}px`, minWidth: `${width}px` }}
+                          className="bg-white border-b border-r border-[#f3f4f6]"
+                          style={{ width: `${width}px`, minWidth: `${width}px`, height: '32px', gap: '8px', padding: '8px' }}
                         >
                           <Badge
                             className={`${getStatusBadgeColor(cellValue)} rounded-full text-xs px-2 py-1 border`}
@@ -357,8 +386,8 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                       return (
                         <TableCell
                           key={`cell-${rowIndex}-${colIndex}`}
-                          className="h-8 px-3 py-1 bg-white border-b border-r border-[#f3f4f6] text-center"
-                          style={{ width: `${width}px`, minWidth: `${width}px` }}
+                          className="bg-white border-b border-r border-[#f3f4f6] text-center"
+                          style={{ width: `${width}px`, minWidth: `${width}px`, height: '32px', gap: '8px', padding: '8px' }}
                         >
                           <div className={`text-sm ${getPriorityColor(cellValue)}`}>
                             {cellValue}
@@ -371,8 +400,8 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                       return (
                         <TableCell
                           key={`cell-${rowIndex}-${colIndex}`}
-                          className="h-8 px-3 py-1 bg-white border-b border-r border-[#f3f4f6]"
-                          style={{ width: `${width}px`, minWidth: `${width}px` }}
+                          className="bg-white border-b border-r border-[#f3f4f6]"
+                          style={{ width: `${width}px`, minWidth: `${width}px`, height: '32px', gap: '8px', padding: '8px' }}
                         >
                           <div className="flex justify-end items-center gap-1">
                             <span className="text-sm text-[#111827] text-right font-medium">
@@ -387,8 +416,8 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                     return (
                       <TableCell
                         key={`cell-${rowIndex}-${colIndex}`}
-                        className="h-8 px-0 py-0 bg-white border-b border-r border-[#f3f4f6]"
-                        style={{ width: `${width}px`, minWidth: `${width}px` }}
+                        className="px-0 py-0 bg-white border-b border-r border-[#f3f4f6]"
+                        style={{ width: `${width}px`, minWidth: `${width}px`, height: '32px' }}
                       >
                         <SpreadsheetCell
                           value={cellValue}
@@ -410,8 +439,8 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
         </div>
 
         {/* Add column */}
-        <div className="flex-none w-[60px] border border-dashed border-[#d1d5db] flex flex-col">
-          <div className="h-8 bg-[#f3f4f6] flex items-center justify-center border-b border-[#e5e7eb]">
+        <div className="flex-none border border-dashed border-[#d1d5db] flex flex-col" style={{ width: '124px' }}>
+          <div className="flex items-center justify-center border-b border-[#e5e7eb]" style={{ height: '32px', width: '124px', gap: '8px', padding: '8px', background: '#EEEEEE' }}>
             <button
               onClick={() => console.log('Add new column')}
               className="hover:bg-gray-200 p-1 rounded transition-colors"
@@ -419,7 +448,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
               <Plus className="w-4 h-4 text-[#9ca3af] stroke-[1.5]" />
             </button>
           </div>
-          <div className="h-8 bg-[#f3f4f6] flex items-center justify-center border-b border-[#e5e7eb]"></div>
+          <div className="flex items-center justify-center border-b border-[#e5e7eb]" style={{ height: '32px', background: '#EEEEEE' }}></div>
           <div className="flex-1 bg-white"></div>
         </div>
       </div>
