@@ -114,55 +114,6 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
     maxCols: 9,
   });
 
-  const columnHeaders = [
-    { icon: Hash, label: '#', bgColor: 'bg-[#f3f4f6]', width: 40 },
-    { icon: Briefcase, label: 'Job Request', bgColor: 'bg-[#f3f4f6]', width: 280 },
-    { icon: Calendar, label: 'Submitted', bgColor: 'bg-[#f3f4f6]', width: 120 },
-    { icon: CircleDot, label: 'Status', bgColor: 'bg-[#f3f4f6]', width: 120 },
-    { icon: User, label: 'Submitter', bgColor: 'bg-[#f3f4f6]', width: 120 },
-    { icon: Globe, label: 'URL', bgColor: 'bg-[#f3f4f6]', width: 140 },
-    {
-      icon: UserCheck,
-      label: 'Assigned',
-      bgColor: 'bg-[#dcfce7]',
-      textColor: 'text-[#166534]',
-      headerBg: 'bg-[#bbf7d0]',
-      headerText: 'text-[#166534]',
-      headerTitle: 'ABC',
-      width: 120,
-    },
-    {
-      icon: null,
-      label: 'Priority',
-      bgColor: 'bg-[#f3e8ff]',
-      textColor: 'text-[#7c3aed]',
-      headerBg: 'bg-[#e9d5ff]',
-      headerText: 'text-[#7c3aed]',
-      headerTitle: 'Answer a question',
-      width: 100,
-    },
-    {
-      icon: null,
-      label: 'Due Date',
-      bgColor: 'bg-[#f3e8ff]',
-      textColor: 'text-[#7c3aed]',
-      headerBg: 'bg-[#e9d5ff]',
-      headerText: 'text-[#7c3aed]',
-      headerTitle: 'Answer a question',
-      width: 120,
-    },
-    {
-      icon: null,
-      label: 'Est. Value',
-      bgColor: 'bg-[#fed7aa]',
-      textColor: 'text-[#ea580c]',
-      headerBg: 'bg-[#fdba74]',
-      headerText: 'text-[#ea580c]',
-      headerTitle: 'Extract',
-      width: 120,
-    },
-  ];
-
   const getStatusBadgeColor = (status: string) => {
     switch (status) {
       case 'In-process':
@@ -285,153 +236,280 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
                 </TableHead>
               </TableRow>
               <TableRow className="border-none">
-                {columnHeaders.slice(1).map((header, index) => {
-                  const colIndex = index + 1;
-                  const IconComponent = header.icon;
-                  const isHidden = hiddenColumns.has(colIndex);
-                  
-                  // Set specific widths for each column
-                  let width;
-                  let bgColor;
-                  if (header.label === 'Job Request') {
-                    width = 256;
-                    bgColor = '#EEEEEE';
-                  } else if (header.label === 'Priority' || header.label === 'Due Date') {
-                    width = 124;
-                    bgColor = '#EAE3FC';
-                  } else if (header.label === 'Est. Value') {
-                    width = 124;
-                    bgColor = '#FFE9E0';
-                  } else {
-                    width = 124;
-                    bgColor = '#EEEEEE';
-                  }
-
-                  if (isHidden) return null;
-
-                  return (
-                    <TableHead
-                      key={`subheader-${index}`}
-                      className="border-b border-r border-[#e5e7eb] relative"
-                      style={{ width: `${width}px`, minWidth: `${width}px`, height: '32px', background: bgColor }}
-                    >
-                      <div className="flex items-center gap-2" style={{ height: '32px', gap: '8px', padding: '8px' }}>
-                        <div className="flex items-center gap-2 flex-1">
-                          {IconComponent && (
-                            <IconComponent className="w-4 h-4 text-[#6b7280] stroke-[1.5]" />
-                          )}
-                          <span
-                            className={`text-sm font-medium ${
-                              header.textColor || 'text-[#6b7280]'
-                            }`}
-                          >
-                            {header.label}
-                          </span>
-                        </div>
-                      </div>
-                      <ColumnResizer
-                        onResize={(newWidth) => onResizeColumn(colIndex, newWidth)}
-                        initialWidth={width}
-                      />
-                    </TableHead>
-                  );
-                })}
+                <TableHead
+                  className="border-b border-r border-[#e5e7eb] relative"
+                  style={{ width: '256px', minWidth: '256px', height: '32px', background: '#EEEEEE' }}
+                >
+                  <div className="flex items-center gap-2" style={{ height: '32px', gap: '8px', padding: '8px' }}>
+                    <div className="flex items-center gap-2 flex-1">
+                      <Briefcase className="w-4 h-4 text-[#6b7280] stroke-[1.5]" />
+                      <span className="text-sm font-medium text-[#6b7280]">Job Request</span>
+                    </div>
+                  </div>
+                  <ColumnResizer
+                    onResize={(newWidth) => onResizeColumn(1, newWidth)}
+                    initialWidth={256}
+                  />
+                </TableHead>
+                <TableHead
+                  className="border-b border-r border-[#e5e7eb] relative"
+                  style={{ width: '124px', minWidth: '124px', height: '32px', background: '#EEEEEE' }}
+                >
+                  <div className="flex items-center gap-2" style={{ height: '32px', gap: '8px', padding: '8px' }}>
+                    <div className="flex items-center gap-2 flex-1">
+                      <Calendar className="w-4 h-4 text-[#6b7280] stroke-[1.5]" />
+                      <span className="text-sm font-medium text-[#6b7280]">Submitted</span>
+                    </div>
+                  </div>
+                  <ColumnResizer
+                    onResize={(newWidth) => onResizeColumn(2, newWidth)}
+                    initialWidth={124}
+                  />
+                </TableHead>
+                <TableHead
+                  className="border-b border-r border-[#e5e7eb] relative"
+                  style={{ width: '124px', minWidth: '124px', height: '32px', background: '#EEEEEE' }}
+                >
+                  <div className="flex items-center gap-2" style={{ height: '32px', gap: '8px', padding: '8px' }}>
+                    <div className="flex items-center gap-2 flex-1">
+                      <CircleDot className="w-4 h-4 text-[#6b7280] stroke-[1.5]" />
+                      <span className="text-sm font-medium text-[#6b7280]">Status</span>
+                    </div>
+                  </div>
+                  <ColumnResizer
+                    onResize={(newWidth) => onResizeColumn(3, newWidth)}
+                    initialWidth={124}
+                  />
+                </TableHead>
+                <TableHead
+                  className="border-b border-r border-[#e5e7eb] relative"
+                  style={{ width: '124px', minWidth: '124px', height: '32px', background: '#EEEEEE' }}
+                >
+                  <div className="flex items-center gap-2" style={{ height: '32px', gap: '8px', padding: '8px' }}>
+                    <div className="flex items-center gap-2 flex-1">
+                      <User className="w-4 h-4 text-[#6b7280] stroke-[1.5]" />
+                      <span className="text-sm font-medium text-[#6b7280]">Submitter</span>
+                    </div>
+                  </div>
+                  <ColumnResizer
+                    onResize={(newWidth) => onResizeColumn(4, newWidth)}
+                    initialWidth={124}
+                  />
+                </TableHead>
+                <TableHead
+                  className="border-b border-r border-[#e5e7eb] relative"
+                  style={{ width: '124px', minWidth: '124px', height: '32px', background: '#EEEEEE' }}
+                >
+                  <div className="flex items-center gap-2" style={{ height: '32px', gap: '8px', padding: '8px' }}>
+                    <div className="flex items-center gap-2 flex-1">
+                      <Globe className="w-4 h-4 text-[#6b7280] stroke-[1.5]" />
+                      <span className="text-sm font-medium text-[#6b7280]">URL</span>
+                    </div>
+                  </div>
+                  <ColumnResizer
+                    onResize={(newWidth) => onResizeColumn(5, newWidth)}
+                    initialWidth={124}
+                  />
+                </TableHead>
+                <TableHead
+                  className="border-b border-r border-[#e5e7eb] relative"
+                  style={{ width: '124px', minWidth: '124px', height: '32px', background: '#EEEEEE' }}
+                >
+                  <div className="flex items-center gap-2" style={{ height: '32px', gap: '8px', padding: '8px' }}>
+                    <div className="flex items-center gap-2 flex-1">
+                      <UserCheck className="w-4 h-4 text-[#6b7280] stroke-[1.5]" />
+                      <span className="text-sm font-medium text-[#6b7280]">Assigned</span>
+                    </div>
+                  </div>
+                  <ColumnResizer
+                    onResize={(newWidth) => onResizeColumn(6, newWidth)}
+                    initialWidth={124}
+                  />
+                </TableHead>
+                <TableHead
+                  className="border-b border-r border-[#e5e7eb] relative"
+                  style={{ width: '124px', minWidth: '124px', height: '32px', background: '#EAE3FC' }}
+                >
+                  <div className="flex items-center gap-2" style={{ height: '32px', gap: '8px', padding: '8px' }}>
+                    <div className="flex items-center gap-2 flex-1">
+                      <span className="text-sm font-medium text-[#6b7280]">Priority</span>
+                    </div>
+                  </div>
+                  <ColumnResizer
+                    onResize={(newWidth) => onResizeColumn(7, newWidth)}
+                    initialWidth={124}
+                  />
+                </TableHead>
+                <TableHead
+                  className="border-b border-r border-[#e5e7eb] relative"
+                  style={{ width: '124px', minWidth: '124px', height: '32px', background: '#EAE3FC' }}
+                >
+                  <div className="flex items-center gap-2" style={{ height: '32px', gap: '8px', padding: '8px' }}>
+                    <div className="flex items-center gap-2 flex-1">
+                      <span className="text-sm font-medium text-[#6b7280]">Due Date</span>
+                    </div>
+                  </div>
+                  <ColumnResizer
+                    onResize={(newWidth) => onResizeColumn(8, newWidth)}
+                    initialWidth={124}
+                  />
+                </TableHead>
+                <TableHead
+                  className="border-b border-r border-[#e5e7eb] relative"
+                  style={{ width: '124px', minWidth: '124px', height: '32px', background: '#FFE9E0' }}
+                >
+                  <div className="flex items-center gap-2" style={{ height: '32px', gap: '8px', padding: '8px' }}>
+                    <div className="flex items-center gap-2 flex-1">
+                      <span className="text-sm font-medium text-[#6b7280]">Est. Value</span>
+                    </div>
+                  </div>
+                  <ColumnResizer
+                    onResize={(newWidth) => onResizeColumn(9, newWidth)}
+                    initialWidth={124}
+                  />
+                </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {Array.from({ length: 25 }, (_, rowIndex) => (
                 <TableRow key={`row-${rowIndex}`} className="border-none">
-                  {columnHeaders.slice(1).map((header, colIndex) => {
-                    const actualColIndex = colIndex + 1;
-                    const isHidden = hiddenColumns.has(actualColIndex);
-                    const cellKey = `${rowIndex}-${colIndex}`;
-                    const cellValue = cellData[cellKey] || '';
+                  {/* Job Request Column */}
+                  <TableCell
+                    className="px-0 py-0 bg-white border-b border-r border-[#f3f4f6]"
+                    style={{ width: '256px', minWidth: '256px', height: '32px' }}
+                  >
+                    <SpreadsheetCell
+                      value={cellData[`${rowIndex}-0`] || ''}
+                      isSelected={selectedCell?.row === rowIndex && selectedCell?.col === 0}
+                      isEditing={editingCell?.row === rowIndex && editingCell?.col === 0}
+                      onSelect={() => onSelectCell(rowIndex, 0)}
+                      onStartEdit={() => onStartEditing(rowIndex, 0)}
+                      onStopEdit={onStopEditing}
+                      onValueChange={(value) => updateCellValue(rowIndex, 0, value)}
+                    />
+                  </TableCell>
+                  
+                  {/* Submitted Column */}
+                  <TableCell
+                    className="px-0 py-0 bg-white border-b border-r border-[#f3f4f6]"
+                    style={{ width: '124px', minWidth: '124px', height: '32px' }}
+                  >
+                    <SpreadsheetCell
+                      value={cellData[`${rowIndex}-1`] || ''}
+                      isSelected={selectedCell?.row === rowIndex && selectedCell?.col === 1}
+                      isEditing={editingCell?.row === rowIndex && editingCell?.col === 1}
+                      onSelect={() => onSelectCell(rowIndex, 1)}
+                      onStartEdit={() => onStartEditing(rowIndex, 1)}
+                      onStopEdit={onStopEditing}
+                      onValueChange={(value) => updateCellValue(rowIndex, 1, value)}
+                    />
+                  </TableCell>
 
-                    // Set specific widths and backgrounds for each column
-                    let width;
-                    let cellBgColor = 'bg-white';
-                    if (header.label === 'Job Request') {
-                      width = 256;
-                    } else if (header.label === 'Priority' || header.label === 'Due Date') {
-                      width = 124;
-                    } else if (header.label === 'Est. Value') {
-                      width = 124;
-                    } else {
-                      width = 124;
-                    }
-
-                    if (isHidden) return null;
-
-                    const isSelected = selectedCell?.row === rowIndex && selectedCell?.col === colIndex;
-                    const isEditing = editingCell?.row === rowIndex && editingCell?.col === colIndex;
-
-                    // Special rendering for status and priority columns
-                    if (header.label === 'Status' && cellValue) {
-                      return (
-                        <TableCell
-                          key={`cell-${rowIndex}-${colIndex}`}
-                          className="bg-white border-b border-r border-[#f3f4f6]"
-                          style={{ width: `${width}px`, minWidth: `${width}px`, height: '32px', gap: '8px', padding: '8px' }}
-                        >
-                          <Badge
-                            className={`${getStatusBadgeColor(cellValue)} rounded-full text-xs px-2 py-1 border`}
-                          >
-                            {cellValue}
-                          </Badge>
-                        </TableCell>
-                      );
-                    }
-
-                    if (header.label === 'Priority' && cellValue) {
-                      return (
-                        <TableCell
-                          key={`cell-${rowIndex}-${colIndex}`}
-                          className="bg-white border-b border-r border-[#f3f4f6] text-center"
-                          style={{ width: `${width}px`, minWidth: `${width}px`, height: '32px', gap: '8px', padding: '8px' }}
-                        >
-                          <div className={`text-sm ${getPriorityColor(cellValue)}`}>
-                            {cellValue}
-                          </div>
-                        </TableCell>
-                      );
-                    }
-
-                    if (header.label === 'Est. Value' && cellValue) {
-                      return (
-                        <TableCell
-                          key={`cell-${rowIndex}-${colIndex}`}
-                          className="bg-white border-b border-r border-[#f3f4f6]"
-                          style={{ width: `${width}px`, minWidth: `${width}px`, height: '32px', gap: '8px', padding: '8px' }}
-                        >
-                          <div className="flex justify-end items-center gap-1">
-                            <span className="text-sm text-[#111827] text-right font-medium">
-                              {cellValue}
-                            </span>
-                            <span className="text-sm text-[#9ca3af] font-medium">₹</span>
-                          </div>
-                        </TableCell>
-                      );
-                    }
-
-                    return (
-                      <TableCell
-                        key={`cell-${rowIndex}-${colIndex}`}
-                        className="px-0 py-0 bg-white border-b border-r border-[#f3f4f6]"
-                        style={{ width: `${width}px`, minWidth: `${width}px`, height: '32px' }}
+                  {/* Status Column */}
+                  <TableCell
+                    className="bg-white border-b border-r border-[#f3f4f6]"
+                    style={{ width: '124px', minWidth: '124px', height: '32px', gap: '8px', padding: '8px' }}
+                  >
+                    {cellData[`${rowIndex}-2`] && (
+                      <Badge
+                        className={`${getStatusBadgeColor(cellData[`${rowIndex}-2`])} rounded-full text-xs px-2 py-1 border`}
                       >
-                        <SpreadsheetCell
-                          value={cellValue}
-                          isSelected={isSelected}
-                          isEditing={isEditing}
-                          onSelect={() => onSelectCell(rowIndex, colIndex)}
-                          onStartEdit={() => onStartEditing(rowIndex, colIndex)}
-                          onStopEdit={onStopEditing}
-                          onValueChange={(value) => updateCellValue(rowIndex, colIndex, value)}
-                          className={header.label === 'URL' ? 'underline text-blue-600' : ''}
-                        />
-                      </TableCell>
-                    );
-                  })}
+                        {cellData[`${rowIndex}-2`]}
+                      </Badge>
+                    )}
+                  </TableCell>
+
+                  {/* Submitter Column */}
+                  <TableCell
+                    className="px-0 py-0 bg-white border-b border-r border-[#f3f4f6]"
+                    style={{ width: '124px', minWidth: '124px', height: '32px' }}
+                  >
+                    <SpreadsheetCell
+                      value={cellData[`${rowIndex}-3`] || ''}
+                      isSelected={selectedCell?.row === rowIndex && selectedCell?.col === 3}
+                      isEditing={editingCell?.row === rowIndex && editingCell?.col === 3}
+                      onSelect={() => onSelectCell(rowIndex, 3)}
+                      onStartEdit={() => onStartEditing(rowIndex, 3)}
+                      onStopEdit={onStopEditing}
+                      onValueChange={(value) => updateCellValue(rowIndex, 3, value)}
+                    />
+                  </TableCell>
+
+                  {/* URL Column */}
+                  <TableCell
+                    className="px-0 py-0 bg-white border-b border-r border-[#f3f4f6]"
+                    style={{ width: '124px', minWidth: '124px', height: '32px' }}
+                  >
+                    <SpreadsheetCell
+                      value={cellData[`${rowIndex}-4`] || ''}
+                      isSelected={selectedCell?.row === rowIndex && selectedCell?.col === 4}
+                      isEditing={editingCell?.row === rowIndex && editingCell?.col === 4}
+                      onSelect={() => onSelectCell(rowIndex, 4)}
+                      onStartEdit={() => onStartEditing(rowIndex, 4)}
+                      onStopEdit={onStopEditing}
+                      onValueChange={(value) => updateCellValue(rowIndex, 4, value)}
+                      className="underline text-blue-600"
+                    />
+                  </TableCell>
+
+                  {/* Assigned Column */}
+                  <TableCell
+                    className="px-0 py-0 bg-white border-b border-r border-[#f3f4f6]"
+                    style={{ width: '124px', minWidth: '124px', height: '32px' }}
+                  >
+                    <SpreadsheetCell
+                      value={cellData[`${rowIndex}-5`] || ''}
+                      isSelected={selectedCell?.row === rowIndex && selectedCell?.col === 5}
+                      isEditing={editingCell?.row === rowIndex && editingCell?.col === 5}
+                      onSelect={() => onSelectCell(rowIndex, 5)}
+                      onStartEdit={() => onStartEditing(rowIndex, 5)}
+                      onStopEdit={onStopEditing}
+                      onValueChange={(value) => updateCellValue(rowIndex, 5, value)}
+                    />
+                  </TableCell>
+
+                  {/* Priority Column */}
+                  <TableCell
+                    className="bg-white border-b border-r border-[#f3f4f6] text-center"
+                    style={{ width: '124px', minWidth: '124px', height: '32px', gap: '8px', padding: '8px' }}
+                  >
+                    {cellData[`${rowIndex}-6`] && (
+                      <div className={`text-sm ${getPriorityColor(cellData[`${rowIndex}-6`])}`}>
+                        {cellData[`${rowIndex}-6`]}
+                      </div>
+                    )}
+                  </TableCell>
+
+                  {/* Due Date Column */}
+                  <TableCell
+                    className="px-0 py-0 bg-white border-b border-r border-[#f3f4f6]"
+                    style={{ width: '124px', minWidth: '124px', height: '32px' }}
+                  >
+                    <SpreadsheetCell
+                      value={cellData[`${rowIndex}-7`] || ''}
+                      isSelected={selectedCell?.row === rowIndex && selectedCell?.col === 7}
+                      isEditing={editingCell?.row === rowIndex && editingCell?.col === 7}
+                      onSelect={() => onSelectCell(rowIndex, 7)}
+                      onStartEdit={() => onStartEditing(rowIndex, 7)}
+                      onStopEdit={onStopEditing}
+                      onValueChange={(value) => updateCellValue(rowIndex, 7, value)}
+                    />
+                  </TableCell>
+
+                  {/* Est. Value Column */}
+                  <TableCell
+                    className="bg-white border-b border-r border-[#f3f4f6]"
+                    style={{ width: '124px', minWidth: '124px', height: '32px', gap: '8px', padding: '8px' }}
+                  >
+                    {cellData[`${rowIndex}-8`] && (
+                      <div className="flex justify-end items-center gap-1">
+                        <span className="text-sm text-[#111827] text-right font-medium">
+                          {cellData[`${rowIndex}-8`]}
+                        </span>
+                        <span className="text-sm text-[#9ca3af] font-medium">₹</span>
+                      </div>
+                    )}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
