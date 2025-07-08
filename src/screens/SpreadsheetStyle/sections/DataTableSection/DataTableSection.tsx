@@ -116,11 +116,11 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
 
   const columnHeaders = [
     { icon: Hash, label: '#', bgColor: 'bg-[#f3f4f6]', width: 40 },
-    { icon: Briefcase, label: 'Job Request', bgColor: 'bg-[#EEEEEE]', width: 280 },
-    { icon: Calendar, label: 'Submitted', bgColor: 'bg-[#EEEEEE]', width: 120 },
-    { icon: CircleDot, label: 'Status', bgColor: 'bg-[#EEEEEE]', width: 120 },
-    { icon: User, label: 'Submitter', bgColor: 'bg-[#EEEEEE]', width: 120 },
-    { icon: Globe, label: 'URL', bgColor: 'bg-[#EEEEEE]', width: 140 },
+    { icon: Briefcase, label: 'Job Request', bgColor: 'bg-[#EEEEEE]', width: 240 },
+    { icon: Calendar, label: 'Submitted', bgColor: 'bg-[#EEEEEE]', width: 110 },
+    { icon: CircleDot, label: 'Status', bgColor: 'bg-[#EEEEEE]', width: 110 },
+    { icon: User, label: 'Submitter', bgColor: 'bg-[#EEEEEE]', width: 110 },
+    { icon: Globe, label: 'URL', bgColor: 'bg-[#EEEEEE]', width: 130 },
     {
       icon: UserCheck,
       label: 'Assigned',
@@ -129,7 +129,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
       headerBg: 'bg-[#D2E0D4]',
       headerText: 'text-[#166534]',
       headerTitle: 'ABC',
-      width: 120,
+      width: 110,
     },
     {
       icon: null,
@@ -139,7 +139,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
       headerBg: 'bg-[#DCCFFC]',
       headerText: 'text-[#7c3aed]',
       headerTitle: 'Answer a question',
-      width: 100,
+      width: 90,
     },
     {
       icon: null,
@@ -149,7 +149,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
       headerBg: 'bg-[#DCCFFC]',
       headerText: 'text-[#7c3aed]',
       headerTitle: 'Answer a question',
-      width: 120,
+      width: 110,
     },
     {
       icon: null,
@@ -159,7 +159,7 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
       headerBg: 'bg-[#FAC2AF]',
       headerText: 'text-[#ea580c]',
       headerTitle: 'Extract',
-      width: 120,
+      width: 110,
     },
   ];
 
@@ -410,11 +410,11 @@ export const DataTableSection: React.FC<DataTableSectionProps> = ({
         </div>
 
         {/* Add column */}
-        <div className="flex-none w-[60px] border border-dashed border-[#d1d5db] flex flex-col">
+        <div className="flex-none w-[80px] border border-dashed border-[#d1d5db] flex flex-col">
           <div className="h-8 bg-[#EEEEEE] flex items-center justify-center border-b border-[#e5e7eb]">
             <button
               onClick={() => console.log('Add new column')}
-              className="hover:bg-gray-200 p-1 rounded transition-colors"
+              className="hover:bg-gray-200 p-2 rounded transition-colors"
             >
               <Plus className="w-4 h-4 text-[#9ca3af] stroke-[1.5]" />
             </button>
